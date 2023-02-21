@@ -43,3 +43,10 @@ getIds = (text) => {
     key.value = receivedKey;
 }
 
+anotherSensor = () => {
+    console.log('fired')
+    let another = document.getElementsByClassName("another")
+    another.onlick = function() {
+        window.location.reload()
+    }
+}

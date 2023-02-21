@@ -32,16 +32,17 @@
     <div id="qr-reader-results"></div>
     <form>
       <label for="aKey">appKey:</label><br>
-      <input type="text" class="aKey" name="aKey"  id="gwKey"><br>
+      <input type="text" class="aKey" name="aKey" id="gwKey"><br>
       <label for="sId">Id:</label><br>
       <input type="text" class="sId" name="sId" id="gwId"><br>
     </form>
     <p>Mark the sensor, e.g. by name to recgonize it</p>
-
-    <form method="get" action="MountGW.html">
-      <input type="submit" value="Add another sensor" class="next">
-      <input type="submit" value="Continue Setup" class="next" >
-    </form>
+    <a href="RegisterSensor.html">
+      <button type="submit" value="Add another sensor" class="next another">Add another sensor</button>
+    </a>
+    <a href="MountGW.html">
+      <button type="submit" value="Continue Setup" class="next">Continue Setup</button>
+    </a>
   </section>
 
 
