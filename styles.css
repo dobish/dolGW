@@ -38,6 +38,34 @@ input[type="text" i], input[type="password" i]  {
     height: 30px;
     font-size: medium;
 }
+iframe{
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 700px;
+}
+
+img{
+    width: 100%;
+}
+.image{
+    width: 100%;
+}
+
+.section{
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5em;
+    height: 100%;
+}
+.video{
+    display: flex;
+        justify-content: space-evenly;
+        left: 0;
+        border: 0;
+        top: 0;
+        padding-top: 10px;
+padding-bottom: 10px;
+}
 
 .next, .submit{
     background-color: #004077;
