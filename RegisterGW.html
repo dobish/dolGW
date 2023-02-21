@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="scripts.js"></script>
+  <title>Register Gateway</title>
+</head>
+
+<body>
+  <header>
+    <h1>Register Gateway</h1>
+  </header>
+  <section>
+    <p>Enter name of the farm where you will place the gateway and name your gateway</p>
+    <form>
+      <label for="fname">Farm name*:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="gwname">Gateway name*:</label><br>
+      <input type="text" id="gwname" name="gwname">
+    </form>
+    <p>Scan QR code on the gateway</p>
+    <div id="qr-reader"></div>
+    <div id="qr-reader-results"></div>
+    <form>
+      <label for="gwKey">Key:</label><br>
+      <input type="text" id="gwKey" name="gwKey"><br>
+      <label for="gwId">Id:</label><br>
+      <input type="text" id="gwId" name="gwId"><br>
+    </form>
+    <form method="POST" action="RegisterSensor.html">
+      <input type="submit" value="Save" class="submit">
+    </form>
+
+  </section>
+
+
+</body>
+
+</html>

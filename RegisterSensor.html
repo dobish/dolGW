@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="scripts.js"></script>
+  <title>Register Gateway</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Register Sensor</h1>
+  </header>
+  <section>
+    <p>Enter location for where you will place the sensor and name your sensor</p>
+    <form>
+      <label for="sname">Stable name:</label><br>
+      <input type="text" id="sname" name="sname"><br>
+      <label for="ssname">Section name:</label><br>
+      <input type="text" id="ssname" name="ssname"><br>
+      <label for="sensorname">Sensor name*:</label><br>
+      <input type="text" id="sensorname" name="sensorname">
+    </form>
+    <p>Scan QR code on the sensor</p>
+    <div id="qr-reader"></div>
+    <div id="qr-reader-results"></div>
+    <form>
+      <label for="aKey">appKey:</label><br>
+      <input type="text" class="aKey" name="aKey"  id="gwKey"><br>
+      <label for="sId">Id:</label><br>
+      <input type="text" class="sId" name="sId" id="gwId"><br>
+    </form>
+    <p>Mark the sensor, e.g. by name to recgonize it</p>
+
+    <form method="POST" action="MountGW.html">
+      <input type="submit" value="Add another sensor" class="next">
+      <input type="submit" value="Continue Setup" class="next" >
+    </form>
+  </section>
+
+
+
+</body>
+
+</html>

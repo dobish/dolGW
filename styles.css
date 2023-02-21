@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    background-color: #004077;
+    font-family: 'Work Sans', sans-serif;
+    max-height: 100vh;
+}
+h1 {
+    color: white;
+    margin: 0;
+}
+
+h2{
+
+}
+
+#qr-reader{
+    width: 100%;
+}
+header {
+    background-color: #004077;
+    color: white;
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+    padding: 2em 10px;
+}
+
+section {
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5em;
+    height: 130vh;
+}
+.antenna-text {
+    margin-bottom: 0.5em;
+    font-weight: 800;
+}
+
+input[type="text" i], input[type="password" i]  {
+    height: 30px;
+    font-size: medium;
+}
+
+.next, .submit{
+    background-color: #004077;
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 10px;
+}
+.next:hover,
+.next:focus {
+  background-color: #0f5592;
+}

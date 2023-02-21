@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <h1>dol Omni Web Shop</h1>
+  </header>
+  <section>
+    <h2>Select sensor</h2>
+    <form>
+      <input type="checkbox" id="Wireless_3in1" name="Wireless_3in1" value="Wireless_3in1">
+      <label for="Wireless_3in1"> Wireless combined temperature, humidity and CO2</label>
+      <br>
+      <input type="checkbox" id="Wireless_AP" name="Wireless_AP" value="Wireless_AP">
+      <label for="Wireless_AP"> Wireless accesspoint for cabled sensors</label>
+      <br>
+      <input type="checkbox" id="DOL53" name="DOL53" value="DOL53">
+      <label for="DOL53"> DOL 53 Ammonia Sensor</label>
+      <br>
+
+    </form>
+
+    <h2>Select how you want the sensor to be powered</h2>
+    <form>
+      <input type="checkbox" id="220VAC" name="220VAC" value="220VAC">
+      <label for="220VAC"> 110-240 VAC</label>
+      <br>
+      <input type="checkbox" id="24VDC" name="24VDC" value="24VDC">
+      <label for="24VDC"> 24VDC</label>
+      <br>
+      <input type="checkbox" id="DOL53" name="DOL53" value="DOL53">
+      <label for="Battery"> Battery</label>
+      <br>
+    </form>
+
+    <h2>Select gateway</h2>
+    <form>
+      <input type="checkbox" id="GW_excl_Modem" name="GW_excl_Modem" value="GW_excl_Modem">
+      <label for="GW_excl_Modem"> Gateway without cellular 4G modem</label>
+      <br>
+      <input type="checkbox" id="GW_incl_Modem" name="GW_incl_Modem" value="GW_incl_Modem">
+      <label for="GW_incl_Modem"> Gateway incl. cellular 4G modem</label>
+      <br>
+      <p class="antenna-text">If you have a weak cellular connection in the stable, we reccomend you also buy external antennas</p>
+      <input type="checkbox" id="Antenna" name="Antenna" value="Antenna">
+      <label for="Antenna"> Antenna</label>
+      <br>
+    </form>
+
+
+    <h2>Register profile</h2>
+    <p>Register your profile to complete the purchase</p>
+    <p>Please remember your username and password as you need this when setting up the devices.</p>
+
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname">
+    </form>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" class="text-field"><br>
+      <label for="pwd">Password:</label><br>
+      <input type="password" id="pwd" name="pwd" class="text-field"><br>
+    </form>
+    <p></p>
+
+    <form method="POST" action="nextpage.html">
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+  <footer>
+    <nav>
+
+    </nav>
+  </footer>
+</body>
+
+</html>
