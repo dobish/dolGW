@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>dol Omni Web Shop</h1>
+
+<h2>Select sensor</h2>
+
+<form>
+  <label for="Wireless_3in1"> Wireless combined temperature, humidity and CO2</label>
+  <input type="checkbox" id="Wireless_3in1" name="Wireless_3in1" value="Wireless_3in1"><br>
+  <label for="Wireless_AP"> Wireless accesspoint for cabled sensors</label>
+  <input type="checkbox" id="Wireless_AP" name="Wireless_AP" value="Wireless_AP"><br>
+  <label for="DOL53"> DOL 53 Ammonia Sensor</label>
+  <input type="checkbox" id="DOL53" name="DOL53" value="DOL53"><br>
+  <!---
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"> I have a car</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3"> I have a boat</label>
+	-->
+</form>
+
+<h2>Select how you want the sensor to be powered</h2>
+<form>
+  <label for="220VAC"> 110-240 VAC</label>
+  <input type="checkbox" id="220VAC" name="220VAC" value="220VAC"><br>
+  <label for="24VDC"> 24VDC</label>
+  <input type="checkbox" id="24VDC" name="24VDC" value="24VDC"><br>
+  <label for="Battery"> Battery</label>
+  <input type="checkbox" id="DOL53" name="DOL53" value="DOL53"><br>
+</form>
+
+<h2>Select gateway</h2>
+<form>
+  <label for="GW_excl_Modem"> Gateway without cellular 4G modem</label>
+  <input type="checkbox" id="GW_excl_Modem" name="GW_excl_Modem" value="GW_excl_Modem"><br>
+  <label for="GW_incl_Modem"> Gateway incl. cellular 4G modem</label>
+  <input type="checkbox" id="GW_incl_Modem" name="GW_incl_Modem" value="GW_incl_Modem"><br>
+  <p>If you have a weak cellular connection in the stable, we reccomend you also buy external antennas</p>
+  <label for="Antenna"> Antenna</label>
+  <input type="checkbox" id="Antenna" name="Antenna" value="Antenna"><br>
+</form>
+
+
+<h2>Register profile</h2>
+<p>Register your profile to complete the purchase</p>
+<p>Please remember your username and password as you need this when setting up the devices.</p>
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+</form>
+<form>
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br>
+</form>
+	<p></p>
+	
+  <form method="POST" action="nextpage.html">
+ 	<input type="submit" value="Submit">
+  </form>
+
+
+
+
+</body>
+</html>
