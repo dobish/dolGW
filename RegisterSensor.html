@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/html5-qrcode"></script>
   <script src="scripts.js"></script>
+  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
   <title>Register Gateway</title>
 </head>
 
@@ -29,9 +29,13 @@
        <label for="sensorname">Sensor name*:</label><br>
        <input type="text" id="sensorname" name="sensorname">
      </form>
-     <p>Scan QR code on the sensor</p>
-     <div id="qr-reader"></div>
-     <div id="qr-reader-results"></div>
+     <div class="scanner">
+      <p>Scan QR code on the gateway</p>
+      <button id="btn-scan-qr" class="submit button">
+        Scan QR code
+      </button>
+    </div>
+    <canvas hidden="" id="qr-canvas"></canvas>
      <form>
        <label for="aKey">appKey:</label><br>
        <input type="text" class="aKey" name="aKey" id="gwKey"><br>
@@ -45,7 +49,7 @@
    </section>
  
 
-
+   <script src="qrCodeReader.js"></script>
 </body>
 
 </html>

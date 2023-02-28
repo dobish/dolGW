@@ -9,10 +9,6 @@ h1 {
     margin: 0;
 }
 
-h2{
-
-}
-
 #qr-reader{
     width: 100%;
 }
@@ -96,3 +92,37 @@ padding-bottom: 10px;
 .next:focus {
   background-color: #0f5592;
 }
+
+#container {
+    text-align: center;
+    margin: 0;
+  }
+  
+  #qr-canvas {
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  #btn-scan-qr {
+    cursor: pointer;
+    transition: all 1s;
+  }
+  
+  #btn-scan-qr img {
+    height: 10em;
+    padding: 15px;
+    margin: 15px;
+    background: white;
+  }
+  
+  #qr-result {
+    font-size: 1.2em;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 700px;
+    background-color: white;
+  }
+  .id-form{
+    margin-top: 20px;
+  }
