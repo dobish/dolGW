@@ -15,38 +15,35 @@
 <body>
 
   <header>
-    <h1>Step 2: Register Sensor</h1>
+    <h1>Step 3: Register Sensor</h1>
   </header>
   <section>
-   <progress id="file" value="50" max="100"> </progress>
-
-    <p>Enter location for where you will place the sensor and name your sensor</p>
-    <form>
-      <label for="sname">Stable name:</label><br>
-      <input type="text" id="sname" name="sname"><br>
-      <label for="ssname">Section name:</label><br>
-      <input type="text" id="ssname" name="ssname"><br>
-      <label for="sensorname">Sensor name*:</label><br>
-      <input type="text" id="sensorname" name="sensorname">
-    </form>
-    <p>Scan QR code on the sensor</p>
-    <div id="qr-reader"></div>
-    <div id="qr-reader-results"></div>
-    <form>
-      <label for="aKey">appKey:</label><br>
-      <input type="text" class="aKey" name="aKey" id="gwKey"><br>
-      <label for="sId">Id:</label><br>
-      <input type="text" class="sId" name="sId" id="gwId"><br>
-    </form>
-    <p>Mark the sensor, e.g. by name to recgonize it</p>
-    <a href="RegisterSensor.html">
-      <button type="submit" value="Add extra sensor" class="next another">Add extra sensor</button>
-    </a>
-    <a href="MountGW.html">
-      <button type="submit" value="Continue" class="next">Continue</button>
-    </a>
-  </section>
-
+    <progress id="file" value="75" max="100"> </progress>
+ 
+     <p>Enter location of sensor and name your sensor</p>
+     <form>
+       <label for="sname">Stable name:</label><br>
+       <input type="text" id="sname" name="sname"><br><br>
+       <label for="ssname">Section name:</label><br>
+       <input type="text" id="ssname" name="ssname"><br><br>
+       <label for="sensorname">Sensor name*:</label><br>
+       <input type="text" id="sensorname" name="sensorname">
+     </form>
+     <p>Scan QR code on the sensor</p>
+     <div id="qr-reader"></div>
+     <div id="qr-reader-results"></div>
+     <form>
+       <label for="aKey">appKey:</label><br>
+       <input type="text" class="aKey" name="aKey" id="gwKey"><br>
+       <label for="sId">Id:</label><br>
+       <input type="text" class="sId" name="sId" id="gwId"><br>
+     </form>
+  
+     <a href="MountSensor.html">
+       <button type="submit" value="Continue" class="next">Continue</button>
+     </a>
+   </section>
+ 
 
 
 </body>
