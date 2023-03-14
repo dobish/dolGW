@@ -26,7 +26,7 @@ btn.onclick = () => {
                     html5QrCode.start(deviceId, config, qrCodeSuccessCallback);
                 } else {
                     //If label was not found in the object open the last camera from the array (Might open front facing ¯\_(ツ)_/¯ )
-                    const deviceId = devices[cameras.length - 1].id;
+                    const deviceId = devices[devices.length - 1].id;
                     console.log(`Specified label not found, opening first available camera with device ID ${deviceId}`);
                     html5QrCode.start(deviceId, config, qrCodeSuccessCallback);
                 }
