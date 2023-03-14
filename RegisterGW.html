@@ -20,12 +20,12 @@
     <progress id="file" value="25" max="100"> </progress>
 
     <p>Enter name of farm and name your gateway</p>
-    <form>
+    <form method="get" action="MountGW.html">
       <label for="fname">Farm name*:</label><br>
-      <input type="text" id="fname" name="fname"><br>
+      <input type="text" id="fname" name="fname" required><br>
       <label for="gwname">Gateway name*:</label><br>
-      <input type="text" id="gwname" name="gwname">
-    </form>
+      <input type="text" id="gwname" name="gwname" required>
+
     <div class="scanner">
       <p>Scan QR code on the gateway</p>
       <button id="btn-scan-qr" class="submit button">
@@ -33,15 +33,16 @@
       </button>
     </div>
     <canvas hidden="" id="qr-canvas"></canvas>
-    <form class="id-form">
+
+    <div class="id-form">
       <label for="gwKey">Key:</label><br>
-      <input type="text" id="gwKey" name="gwKey"><br>
+      <input type="text" id="gwKey" name="gwKey" required><br>
       <label for="gwId">Id:</label><br>
-      <input type="text" id="gwId" name="gwId"><br>
-    </form>
-    <form method="get" action="MountGW.html">
+      <input type="text" id="gwId" name="gwId" required><br>
       <input type="submit" value="Continue" class="submit">
+    </div>
     </form>
+    
 
   </section>
 

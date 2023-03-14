@@ -5,18 +5,32 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr-result");
 //const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
+
+
+
+console.log(window.qrcode)
+
+
 var cameraObjects;
 let cameraID;
 
 let scanning = false;
 
+
 //result from QR code scan
 a.callback = res => {
     if (res) {
-        getIds(res);
+        let step = window.localStorage.getItem('step');
+        console.log(step);
+        if (step === "1") {
+            getIds(res);
+        } else {
+            getIds2(res);
+        }
+
+
         //outputData.innerText = res;
         scanning = false;
-
         video.srcObject.getTracks().forEach(track => {
             track.stop();
         });
@@ -24,16 +38,19 @@ a.callback = res => {
         canvasElement.hidden = true;
         btnScanQR.classList.add('submit');
         btnScanQR.hidden = false;
+        canvasElement.remove();
     }
 };
 
-function openCamera(deviceId) {
+function openCamera(deviceId, btn) {
     //console.log(asda())
     navigator.mediaDevices
         .getUserMedia({ video: { deviceId: deviceId } })
         .then(function (stream) {
+            window.localStorage.setItem('step', 1);
             scanning = true;
-            //qrResult.hidden = true;
+            console.log('if')
+            //Camera? Action!
             btnScanQR.classList.remove('submit');
             btnScanQR.hidden = true;
             canvasElement.hidden = false;
@@ -42,6 +59,7 @@ function openCamera(deviceId) {
             video.play();
             tick();
             scan();
+
         });
 };
 
@@ -54,10 +72,15 @@ function tick() {
     scanning && requestAnimationFrame(tick);
 }
 
+
+
+
 //Trigger main function that operates camera when button is clicked
 btnScanQR.onclick = () => {
-    main();
+    main(1);
 }
+
+
 
 //Get all available cameras on the device that meet requirements (videoinput and back facing camera)
 function getCameras() {
@@ -70,7 +93,7 @@ function getCameras() {
 }
 
 
-async function main() {
+async function main(btn) {
     const cameras = await getCameras();
     let cameraName = 'camera2 0, facing back';
     console.log('Available cameras:', cameras);
@@ -81,17 +104,19 @@ async function main() {
         if (index !== -1) {
             const deviceId = cameras[index].id;
             console.log('Opening camera with device ID', deviceId);
-            openCamera(deviceId);
+            openCamera(deviceId, btn);
         } else {
             //If label was not found in the object open the last camera from the array (Might open front facing ¯\_(ツ)_/¯ )
             deviceId = cameras[cameras.length - 1].id;
             console.log(`Specified label not found, opening first available camera with device ID ${deviceId}`);
-            openCamera(deviceId);
+            openCamera(deviceId, btn);
         }
     } else {
         console.error('No cameras available');
     }
 }
+
+
 
 
 function scan() {
@@ -104,10 +129,20 @@ function scan() {
 
 //Received key and ids to input values 
 getIds = (text) => {
-    let key = document.getElementById('gwKey');
-    let id = document.getElementById('gwId');
+    let key = document.getElementById('gw-key');
+    let id = document.getElementById('gw-id');
     let receivedId = text.substring(0, text.indexOf("-"))
     let receivedKey = text.substring(text.indexOf("-") + 1, text.length)
     id.value = receivedId;
     key.value = receivedKey;
+}
+
+getIds2 = (text) => {
+    console.log('odpalanko')
+    let appKey = document.getElementById('app-key');
+    let appId = document.getElementById('sensor-key');
+    let receivedIdsens = text.substring(0, text.indexOf("-"))
+    let receivedKeysens = text.substring(text.indexOf("-") + 1, text.length)
+    appId.value = receivedIdsens;
+    appKey.value = receivedKeysens;
 }

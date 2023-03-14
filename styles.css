@@ -63,6 +63,10 @@ img{
 padding-bottom: 10px;
 }
 
+.blinking-led{
+    
+}
+
 .next, .submit{
     background-color: #004077;
     color: white;
