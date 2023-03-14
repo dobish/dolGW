@@ -16,7 +16,7 @@ btn.onclick = () => {
     Html5Qrcode.getCameras().then(devices => {
 
         let cameraName = 'camera2 0, facing back';
-
+        console.log(devices)
         if (devices && devices.length) {
              if( devices.length > 0) {
                 const index = devices.findIndex(device => device.label === cameraName);
