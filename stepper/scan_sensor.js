@@ -18,6 +18,7 @@ btn_sensor.onclick = () => {
 
         if (devices && devices.length) {
              if( devices.length > 0) {
+                btn_sensor.classList.add('scale-out');
                 const index = devices.findIndex(device => device.label === cameraName);
                 if (index !== -1) {
                     const deviceId = devices[index].id;
@@ -47,9 +48,7 @@ btn_sensor.onclick = () => {
 const qrCodeSuccessCallback_sensor = (decodedText, decodedResult) => {
     /* handle success */
     getIdsSensor(decodedText);
-
-
-
+    btn_sensor.classList.add('scale-in');
 }
 
 

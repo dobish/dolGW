@@ -1,23 +1,23 @@
-//Scan vutton
+//Scan button
 const btn = document.getElementById('btn-scan-qr');
-
+//Get gateway input
 const id = document.getElementById("gw-id");
 const key = document.getElementById("gw-key");
-
+//
 const reader = document.getElementById('reader');
 const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 const html5QrCode = new Html5Qrcode(/* element id */ "reader");
 
 btn.onclick = () => {
-
     // If you want to prefer back camera
-
     // This method will trigger user permissions
     Html5Qrcode.getCameras().then(devices => {
 
         let cameraName = 'camera2 0, facing back';
         console.log(devices)
         if (devices && devices.length) {
+            //btn.style.display = "none";
+            btn.classList.add('scale-out');
              if( devices.length > 0) {
                 const index = devices.findIndex(device => device.label === cameraName);
                 if (index !== -1) {
@@ -31,7 +31,6 @@ btn.onclick = () => {
                     html5QrCode.start(deviceId, config, qrCodeSuccessCallback);
                 }
              }
-            
         }
     }).catch(err => {
         // handle err
@@ -39,20 +38,12 @@ btn.onclick = () => {
     });
 }
 
-
-
-
-
-
-
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
     /* handle success */
     getIdsGw(decodedText);
-
-
-
+    //btn.style.display = "block";
+    btn.classList.add('scale-in')
 }
-
 
 getIdsGw = (text) => {
     let receivedId = text.substring(0, text.indexOf("-"))

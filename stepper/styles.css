@@ -1,3 +1,6 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+}
 .btn,
 .btn-large,
 .btn-small,
@@ -59,6 +62,43 @@ header {
     background-color: rgb(155, 180, 200);
 }
 
+.btn:focus{
+    background-color: rgb(155, 180, 200);
+}
+
 .done::before{
     background-color: rgb(0, 153, 76) !important;
+}
+
+.input_field:focus + .input-label {
+    color: #004077 !important;
+    font-size: 0.8rem;
+    -moz-transform: translateY(-19px) !important;
+    -ms-transform: translateY(-19px) !important;
+    -webkit-transform: translateY(-19px) !important;
+    transform: translateY(-19px) !important;
+}
+
+.input_field:focus {
+    border-bottom: 1px solid #004077 !important;
+    box-shadow: 0 1px 0 0 #004077 !important;
+}
+
+.input_field:valid + .input-label {
+    color: #8597a3 !important;
+    font-size: 0.8rem;
+    -moz-transform: translateY(-19px) !important;
+    -ms-transform: translateY(-19px) !important;
+    -webkit-transform: translateY(-19px) !important;
+    transform: translateY(-19px) !important;
+}
+
+.input-label{
+    color: #8597a3;
+    position: absolute;
+    top: 20px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
