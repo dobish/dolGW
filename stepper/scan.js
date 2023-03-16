@@ -1,6 +1,6 @@
 //Scan button
 const btn = document.getElementById('btn-scan-qr');
-//Get gateway input
+//Get gateway input elements
 const id = document.getElementById("gw-id");
 const key = document.getElementById("gw-key");
 //
