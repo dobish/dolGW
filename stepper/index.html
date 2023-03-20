@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col xl4 l6 m10 s12 offset-xl4 offset-l3 offset-m1">
                     <header><img src="images/DOL Omni_Artboard 5.png" alt="" class=""></header>
-                    <div class="row" id="table-wrapper" >
+                    <div class="row" id="table-wrapper">
                         <table id="sensor-table" class="striped">
                             <tbody>
                             </tbody>
@@ -46,8 +46,9 @@
                                         </div>
                                         <div>
                                             <p>Scan QR code on the gateway</p>
-                                            <a class="waves-effect waves-light btn dol-blue scale-transition" id="btn-scan-qr"><i
-                                                    class="material-icons left">qr_code_2</i>Scan QR code</a>
+                                            <a class="waves-effect waves-light btn dol-blue scale-transition"
+                                                id="btn-scan-qr"><i class="material-icons left">qr_code_2</i>Scan QR
+                                                code</a>
                                         </div>
                                         <div id="reader" width="200px"></div>
                                         <canvas hidden="" id="qr-canvas"></canvas>
@@ -101,7 +102,7 @@
                                             </div>
                                         </div>
                                         <div class="step-actions">
-                                            <button class="dol-blue btn next-step">CONTINUE</button>
+                                            <button class="dol-blue btn next-step" id="gw-continue">CONTINUE</button>
                                             <button class="waves-effect waves-dark btn-flat previous-step">BACK</button>
                                         </div>
                                     </div>
@@ -123,8 +124,9 @@
                                         </div>
                                         <div>
                                             <p>Scan QR code on the sensor</p>
-                                            <a class="waves-effect waves-light btn dol-blue scale-transition" id="btn-scan-qr-sensor"><i
-                                                    class="material-icons left">qr_code_2</i>Scan QR code</a>
+                                            <a class="waves-effect waves-light btn dol-blue scale-transition"
+                                                id="btn-scan-qr-sensor"><i class="material-icons left">qr_code_2</i>Scan
+                                                QR code</a>
                                         </div>
                                         <div id="reader_sensor"></div>
                                         <div class="row m-top">
@@ -137,6 +139,11 @@
                                                 <input id="sensor-id" class="input_field" name="sensor-id" type="text"
                                                     required>
                                                 <label for="sensor-id" class="input-label">ID</label>
+                                            </div>
+                                            <div class="input-field col s12" id="select-wrap">
+                                                <select id="gw-select">
+                                                </select>
+                                                <label>Assign Gateway</label>
                                             </div>
                                         </div>
                                         <div class="step-actions">
@@ -190,6 +197,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
     <script src="scripts.js"></script>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
