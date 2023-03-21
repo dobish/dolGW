@@ -34,7 +34,7 @@ populateSelect = (selectElementId, optionsList) => {
     const selectElement = document.getElementById(selectElementId);
 
     // clear any existing options
-    selectElement.innerHTML = '';
+    //selectElement.innerHTML = '';
 
 
     // add new options to the select element
