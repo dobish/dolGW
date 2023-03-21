@@ -34,7 +34,7 @@ populateSelect = (selectElementId, optionsList) => {
     const selectElement = document.getElementById(selectElementId);
 
     // clear any existing options
-    //selectElement.innerHTML = '';
+    selectElement.innerHTML = '';
 
 
     // add new options to the select element
@@ -48,11 +48,13 @@ populateSelect = (selectElementId, optionsList) => {
             option.text = optionsList[i].Gateway;
             selectElement.appendChild(option);
         }
-        //That section adds option to select from gateway input
-        let option = document.createElement('option');
-        option.value = optionsList.length;
-        option.text = gatewayName.value;
-        selectElement.appendChild(option);
+        if (gatewayName.value) {
+            //That section adds option to select from gateway input
+            let option = document.createElement('option');
+            option.value = optionsList.length;
+            option.text = gatewayName.value;
+            selectElement.appendChild(option);
+        }
     } else {
         let optionNo = document.createElement('option');
         optionNo.value = 0;
@@ -63,7 +65,7 @@ populateSelect = (selectElementId, optionsList) => {
 
 gwContinue.onclick = () => {
     populateSelect('gw-select', data);
-  }
+}
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
