@@ -11,6 +11,10 @@ const queryString = window.location.search;
 //Parsed parameters
 const urlParams = new URLSearchParams(queryString);
 
+var stepperDiv = document.querySelector('.stepper');
+console.log(stepperDiv);
+var stepper = new MStepper(stepperDiv);
+
 const data = JSON.parse(localStorage.getItem("gateway")) || [];
 
 //const options = {'classes':'blue' ,'dropdownOptions': {'marek':1}}
@@ -94,12 +98,12 @@ anotherSensor = () => {
     }
 }
 
-checkGateway = () => {
-    let obj = data;
-    if (Object.values(obj).indexOf('test1') > -1) {
-        console.log('has test1');
-    }
-}
+// checkGateway = () => {
+//     let obj = data;
+//     if (Object.values(obj).indexOf('test1') > -1) {
+//         console.log('has test1');
+//     }
+// }
 
 
 function anyThing(destroyFeedback) {
@@ -110,9 +114,7 @@ function noThing(destroyFeedback) {
     setTimeout(function () { destroyFeedback(true); }, 1000);
 }
 
-var stepperDiv = document.querySelector('.stepper');
-console.log(stepperDiv);
-var stepper = new MStepper(stepperDiv);
+
 
 console.log(stepper.getSteps());
 
@@ -129,36 +131,42 @@ addSensor = (destroyFeedback, form, activeStepContent) => {
     let selectorValue = selector.value;
 
 
-    const key = 'Gateway'
-    if (data.length > 0) {
-        //data[selectorValue].Sensors.push(sensorId.value)
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].hasOwnProperty(key) && data[i][key] === gatewayName.value) {
-                data[i].Sensors.push(sensorId.value)
-            } else {
-
-                console.log('else')
-                const newSensor = {
-                    "Gateway": gatewayName.value,
-                    "Farm": farmName.value,
-                    "Key": gatewayKey.value,
-                    "Sensors": [sensorId.value]
-                }
-                data.push(newSensor);
-            }
-        }
-    } else {
-        const newSensor = {
-            "Gateway": gatewayName.value,
-            "Farm": farmName.value,
-            "Key": gatewayKey.value,
-            "Sensors": [sensorId.value]
-        }
-        data.push(newSensor);
+    // const key = 'Gateway'
+    // if (data.length > 0) {
+    //     console.log('true')
+    //     //data[selectorValue].Sensors.push(sensorId.value)
+    //     for (let i = 0; i < data.length; i++) {
+    //         if (data[i].hasOwnProperty(key) && data[i][key] === gatewayName.value) {
+    //             data[i].Sensors.push(sensorId.value)
+    //         } else {
+    //             console.log('else')
+    //             const newSensor = {
+    //                 "Gateway": gatewayName.value,
+    //                 "Farm": farmName.value,
+    //                 "Key": gatewayKey.value,
+    //                 "Sensors": [sensorId.value]
+    //             }
+    //             data.push(newSensor);
+    //         }
+    //     }
+    // } else {
+    //     console.log('else')
+    //     const newSensor = {
+    //         "Gateway": gatewayName.value,
+    //         "Farm": farmName.value,
+    //         "Key": gatewayKey.value,
+    //         "Sensors": [sensorId.value]
+    //     }
+    //     data.push(newSensor);
+    // }
+    const newSensor = {
+        "Gateway": gatewayName.value,
+        "Farm": farmName.value,
+        "Key": gatewayKey.value,
+        "Sensors": [sensorId.value]
     }
+    data.push(newSensor);
 
-
-    //let marko = JSON.parse(localStorage.getItem("gateway"));
 
     localStorage.setItem("gateway", JSON.stringify(data));
     console.log(data);
