@@ -30,3 +30,15 @@ gatewayInfo.forEach(user => {
     cell.innerText = value;
   });
 });
+
+document.getElementById("btn-new-sensor").addEventListener("click", addNewSensor2);
+document.getElementById("btn-new-gw").addEventListener("click", addNewSensor3);
+
+
+function addNewSensor2() {
+  window.location = 'https://dobish.github.io/dolGW/stepper/index.html?q=2';
+}
+
+function addNewSensor3() {
+  window.location = 'https://dobish.github.io/dolGW/stepper/index.html?q=0';
+}

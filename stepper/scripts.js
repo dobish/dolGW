@@ -10,6 +10,8 @@ const selector = document.getElementById('gw-select');
 const queryString = window.location.search;
 //Parsed parameters
 const urlParams = new URLSearchParams(queryString);
+const newSensorButton = document.getElementById('btn-new-sensor');
+const newGwButton = document.getElementById('btn-new-gw');
 
 var stepperDiv = document.querySelector('.stepper');
 console.log(stepperDiv);
@@ -27,15 +29,17 @@ addActive = (event) => {
 
 
 populateSelect = (selectElementId, optionsList) => {
+    console.log('run')
     // get the select element by its id
     const selectElement = document.getElementById(selectElementId);
 
     // clear any existing options
     selectElement.innerHTML = '';
 
+
     // add new options to the select element
     //Based on data from gateway localstorage
-    //Here I will have to push to an array value of the gateeway name when array is longer than 0
+    //Here I will have to push to an array value of the gateway name when array is longer than 0
     if (optionsList.length > 0) {
         for (let i = 0; i < optionsList.length; i++) {
             const option = document.createElement('option');
@@ -44,6 +48,11 @@ populateSelect = (selectElementId, optionsList) => {
             option.text = optionsList[i].Gateway;
             selectElement.appendChild(option);
         }
+        //That section adds option to select from gateway input
+        let option = document.createElement('option');
+        option.value = optionsList.length;
+        option.text = gatewayName.value;
+        selectElement.appendChild(option);
     } else {
         let optionNo = document.createElement('option');
         optionNo.value = 0;
@@ -54,7 +63,7 @@ populateSelect = (selectElementId, optionsList) => {
 
 gwContinue.onclick = () => {
     populateSelect('gw-select', data);
-}
+  }
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -62,6 +71,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Popualte Select dropdown with data from localstorage
     populateSelect('gw-select', data);
     console.log(gatewayName.value)
+    var elems = document.querySelectorAll('select');
+    //var instances = M.FormSelect.init(elems, {});
     // Check if user is adding new sensor (coming back from final.html)
     //By chekcing URL parameter. And go to the 3 step
     if (urlParams.get('q') === "2") {
@@ -70,8 +81,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         stepper.openStep(0);
     }
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
+
 })
 
 // getIdsGw = (text) => {
@@ -89,6 +99,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 openNewSensor = (a) => {
     window.location = 'https://dobish.github.io/dolGW/stepper/index.html?q=' + a;
 }
+
+
 
 anotherSensor = () => {
     console.log('fired')
