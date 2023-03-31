@@ -15,7 +15,9 @@ const newGwButton = document.getElementById('btn-new-gw');
 
 var stepperDiv = document.querySelector('.stepper');
 console.log(stepperDiv);
-var stepper = new MStepper(stepperDiv);
+var stepper = new MStepper(stepperDiv, {
+    validationFunction: validationFunction
+});
 
 const data = JSON.parse(localStorage.getItem("gateway")) || [];
 
@@ -188,4 +190,23 @@ addSensor = (destroyFeedback, form, activeStepContent) => {
     document.getElementById('form').submit();
 }
 
+someValidationPlugin = (x) => {
+    console.log(x)
+}
 
+
+function validationFunction(stepperForm, activeStepContent) {
+    var inputs = activeStepContent.querySelectorAll('input, textarea, select');
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].classList.contains('error-border')) {
+            inputs[i].classList.remove('error-border')
+        }
+        if (!inputs[i].checkValidity()) {
+            console.log(inputs[i].nextElementSibling)
+            inputs[i].classList.add("error-border")
+            inputs[i].nextElementSibling.classList.add("error")
+            return false;
+        }
+    }
+    return true;
+}

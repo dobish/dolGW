@@ -20,7 +20,9 @@
         <div class="container">
             <div class="row">
                 <div class="col xl4 l6 m10 s12 offset-xl4 offset-l3 offset-m1">
-                    <header><img src="images/DOL Omni_Artboard 5.png" alt="" class=""></header>
+                    <header><img id="logo"
+                            src="images/Omni Farm_Omni Farm logo blue on white_Omni Farm logo blue on white copy_Omni Farm logo blue on white copy.jpg"
+                            alt="" class=""></header>
                     <div class="row" id="table-wrapper">
                         <table id="sensor-table" class="striped">
                             <tbody>
@@ -28,7 +30,7 @@
                         </table>
                     </div>
                     <div class="card-content">
-                        <form action="final.html" id="form">
+                        <form action="final.html" id="form" method="">
                             <ul data-method="GET" class="stepper linear">
                                 <li class="step active">
                                     <div class="step-title waves-effect waves-dark">Register Gateway</div>
@@ -45,24 +47,30 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <p>Scan QR code on the gateway</p>
-                                            <a class="waves-effect waves-light btn dol-blue scale-transition"
-                                                id="btn-scan-qr"><i class="material-icons left">qr_code_2</i>Scan QR
-                                                code</a>
+                                            <p>Enter device key and ID or click a button to scan the QR code</p>
+                                            <!-- <a class="waves-effect waves-light btn dol-blue scale-transition"><i
+                                                    class="material-icons left">qr_code_2</i>Scan QR
+                                                code</a> -->
+                                            <div class="row m-top">
+                                                <div class="input-field col s12">
+                                                    <input id="gw-key" class="input_field" name="gw-key" type="text"
+                                                        required>
+                                                    <label for="gw-key" class="input-label">Key</label>
+                                                    <a id="btn-scan-qr"><i
+                                                            class="material-icons password-show-button">photo_camera</i></a>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <input class="input_field" id="gw-id" name="gw-id" type="text"
+                                                        required>
+                                                    <label class="input-label" for="gw-id">ID</label>
+                                                    <a id="btn-scan-qr-2"><i
+                                                            class="material-icons password-show-button">photo_camera</i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div id="reader" width="200px"></div>
                                         <canvas hidden="" id="qr-canvas"></canvas>
-                                        <div class="row m-top">
-                                            <div class="input-field col s12">
-                                                <input id="gw-key" class="input_field" name="gw-key" type="text"
-                                                    required>
-                                                <label for="gw-key" class="input-label">Key</label>
-                                            </div>
-                                            <div class="input-field col s12">
-                                                <input class="input_field" id="gw-id" name="gw-id" type="text" required>
-                                                <label class="input-label" for="gw-id">ID</label>
-                                            </div>
-                                        </div>
+
                                         <div class="step-actions">
                                             <button class="btn dol-blue next-step"
                                                 data-feedback="anyThing">Continue</button>
@@ -73,25 +81,23 @@
                                     <div class="step-title waves-effect waves-dark">Mount Gateway</div>
                                     <div class="step-content">
                                         <div class="row">
-                                            <p>a) Check cellular signal</p>
-                                            <div class="step-image">
-                                                <img src="images/singal.png">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <p>b) Mount antennas</p>
+                                            <p>a) Mount antennas</p>
                                             <div class="step-image">
                                                 <img src="images/antennas.png">
                                             </div>
+                                            <h4>OR</h4>
+                                            <div class="step-image">
+                                                <img src="images/cable-mount-antenna-03.jpg">
+                                            </div>
                                         </div>
                                         <div class="row">
-                                            <p>c) Mount Gateway</p>
+                                            <p>b) Mount Gateway</p>
                                             <div class="step-image">
                                                 <img src="images/mount-gw.png">
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <p>d) Power-up Gateway</p>
+                                            <p>c) Power-up Gateway</p>
                                             <div class="step-image">
                                                 <img src="images/powerup-gw.png">
                                             </div>
@@ -123,10 +129,10 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <p>Scan QR code on the sensor</p>
-                                            <a class="waves-effect waves-light btn dol-blue scale-transition"
+                                            <p>Enter device key and ID or click a button to scan the QR code</p>
+                                            <!--<a class="waves-effect waves-light btn dol-blue scale-transition"
                                                 id="btn-scan-qr-sensor"><i class="material-icons left">qr_code_2</i>Scan
-                                                QR code</a>
+                                                QR code</a> -->
                                         </div>
                                         <div id="reader_sensor"></div>
                                         <div class="row m-top">
@@ -134,11 +140,15 @@
                                                 <input id="app-key" class="input_field" name="app-key" type="text"
                                                     required>
                                                 <label for="app-key" class="input-label">AppKey</label>
+                                                <a id="btn-scan-qr-sensor"><i
+                                                        class="material-icons password-show-button">photo_camera</i></a>
                                             </div>
                                             <div class="input-field col s12">
                                                 <input id="sensor-id" class="input_field" name="sensor-id" type="text"
                                                     required>
                                                 <label for="sensor-id" class="input-label">ID</label>
+                                                <a id="btn-scan-qr-sensor-2"><i
+                                                        class="material-icons password-show-button">photo_camera</i></a>
                                             </div>
                                             <label>Assign Sensor to a specific gateway</label>
                                             <div class="input-field col s12" id="select-wrap">
@@ -162,7 +172,7 @@
                                             </div>
                                             <p>b) Mount sensor</p>
                                             <div class="step-image">
-                                                <img src="images/mount-sensor.jpg">
+                                                <img src="images/DOL_139_Mounted-03.jpg">
                                             </div>
                                             <p>Mount sensor in approx. 2m height</p>
                                             <p>c) Secure sensor with attached zip ties</p>
